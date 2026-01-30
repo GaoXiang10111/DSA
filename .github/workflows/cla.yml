@@ -1,0 +1,57 @@
+name: CLA / Signed-off-by check
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  signed-off-check:
+    name: Check Signed-off-by
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # fetch all commits so we can inspect history
+
+      - name: Check for CLA acceptance (PR checkbox or Signed-off-by)
+        env:
+          BASE_REF: ${{ github.event.pull_request.base.ref }}
+          PR_BODY: ${{ github.event.pull_request.body }}
+        run: |
+          echo "Base ref: $BASE_REF"
+
+          echo "Checking PR body for CLA checkbox or acceptance..."
+          BODY="$PR_BODY"
+
+          if echo "$BODY" | tr '[:upper:]' '[:lower:]' | grep -E -q -e '\- \[ ?x\] .*cla' -e 'cla: ?(yes|true)' -e 'i accept (the )?cla' -e 'i agree (to|with) the (cla|contributor license)'; then
+            echo "✅ CLA acceptance found in PR body (checkbox or phrase)."
+            exit 0
+          fi
+
+          echo "No CLA checkbox found in PR description; falling back to commit Signed-off-by checks..."
+
+          git fetch origin "$BASE_REF"
+
+          # List commits in the pull request (range: origin/<base>..HEAD)
+          COMMITS=$(git rev-list origin/$BASE_REF..HEAD)
+          if [ -z "$COMMITS" ]; then
+            echo "No commits to check (empty range)."
+            exit 0
+          fi
+
+          MISSING=0
+          for c in $COMMITS; do
+            echo "Checking commit: $c"
+            MSG=$(git log -1 --format=%B $c)
+            echo "$MSG" | grep -qi "Signed-off-by:" || MISSING=$((MISSING+1))
+          done
+
+          if [ "$MISSING" -gt 0 ]; then
+            echo "::error::Found $MISSING commit(s) without a 'Signed-off-by' footer and no CLA checkbox in PR body."
+            echo "Please add a checked CLA checkbox (e.g., '- [x] I agree to the CLA') to the PR description or add 'Signed-off-by: Name <email>' to each commit."
+            exit 1
+          fi
+
+          echo "All commits contain a Signed-off-by footer."

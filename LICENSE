@@ -1,0 +1,56 @@
+MIT License
+
+Copyright (c) 2026 gallshaun-ux@github
+
+Permission is hereby granted, free of charge, to any person obtaining a copy
+of this software and associated documentation files (the "Software"), to deal
+in the Software without restriction, including without limitation the rights
+to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+copies of the Software, and to permit persons to whom the Software is
+furnished to do so, subject to the following conditions:
+
+The above copyright notice and this permission notice shall be included in all
+copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+SOFTWARE.
+
+--------------------------------------------------------------------------
+
+Contributor License Agreement (CLA)
+
+By submitting Contributions to this project (including, but not limited to,
+commits, pull requests, patches, documentation, or other code and non-code
+materials), each Contributor agrees to the following:
+
+1. License Grant. The Contributor grants the Project maintainers and their
+   successors and licensees a perpetual, worldwide, non-exclusive, royalty-free,
+   irrevocable, transferable, sublicensable license to reproduce, prepare
+   derivative works of, publicly display, publicly perform, sublicense, and
+   distribute the Contributions and such derivative works under the terms of
+   the MIT License above and any other license the Project maintainers may
+   reasonably choose for distributing the Work (including combined works).
+
+2. Ownership and Right to Contribute. The Contributor represents that (a) they
+   are the author and owner of the Contributions or otherwise have the right to
+   grant the license above and (b) the Contributions are their original work or
+   that they have the right to submit those Contributions under the terms of
+   this CLA.
+
+3. Sign-off. By submitting a Contribution (for example, by opening a pull
+   request) the Contributor indicates acceptance of this CLA. For explicit
+   sign-off in commit history, include a Signed-off-by line in the commit
+   message, e.g.:
+
+       Signed-off-by: Your Name <your.email@example.com>
+
+4. No Legal Advice. This CLA is a template and does not constitute legal
+   advice. If you have questions about how this CLA affects your rights, please
+   consult an attorney.
+
+

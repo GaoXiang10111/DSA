@@ -1,0 +1,29 @@
+# Build artifacts
+build/
+*.o
+*.so
+*.dll
+*.dylib
+*.exe
+*.out
+*.a
+*.obj
+*.lib
+*.pdb
+
+# Python
+.venv/
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Test outputs
+*.log
+
+# VSCode
+.vscode/
