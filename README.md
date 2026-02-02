@@ -1,6 +1,6 @@
 # C/C++ Template Library with Python ctypes Integration
 
-This GitHub project is created to revive old C/C++ foundation library to faciliate C/C++ engine for ML/AI research developement. The non-coding part of this project, such as formating, folder layout, Makefile, License, documents, etc. are mostly created by VS Code AI agent. This is learning experience of coding with AI.  
+This GitHub project is created to revive an old C/C++ foundation library to faciliate C/C++ engine for ML/AI research developement. The non-coding part of this project, such as formating, folder layout, Makefile, License, documents, etc. are mostly created by VS Code AI agent. This is learning experience of coding with AI.  
 
 To Do: 
 1) Add more python interfaces for the DSA core library.
